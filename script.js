@@ -1,23 +1,23 @@
-fjkdjsconst makeChange = (c) => {
-  // your name here
-	c = Number(c);
+const makeChange = (c) => {
+  // Ensure input is a number
+  c = Number(c);
 
-	const change = [];
+  const change = {};
 
-	change.q = Math.floor(c / 25);
-	   c = c % 25;
+  change.q = Math.floor(c / 25);
+  c %= 25;
 
-	change.d = Math.floor(c / 10);
-	c = c % 10;
+  change.d = Math.floor(c / 10);
+  c %= 10;
 
-	change.d = Math.floor(c / 5);
-	c = c % 5;
+  change.n = Math.floor(c / 5);
+  c %= 5;
 
-	change.p = c;
+  change.p = c;
 
-	return change;
+  return change;
 };
- 
-// Do not the change the code below
+
+// Do not change the code below
 const c = prompt("Enter c: ");
 alert(JSON.stringify(makeChange(c)));
